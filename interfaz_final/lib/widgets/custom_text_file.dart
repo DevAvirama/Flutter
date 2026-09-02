@@ -8,12 +8,12 @@ Widget buildTextField({
 }) {
   return TextField(
     obscureText: obscure,
-    style: const TextStyle(color: AppColors.texto),
+    style: TextStyle(color: AppColors.texto),
     decoration: InputDecoration(
       filled: true,
       fillColor: AppColors.campos,
       labelText: label,
-      labelStyle: const TextStyle(color: AppColors.texto),
+      labelStyle: TextStyle(color: AppColors.texto),
       prefixIcon: Icon(icon, color: AppColors.encabezado),
       border: OutlineInputBorder(
         borderRadius: BorderRadius.circular(12),

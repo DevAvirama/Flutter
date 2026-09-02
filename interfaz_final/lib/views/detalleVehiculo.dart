@@ -22,15 +22,14 @@ class DetalleVehiculoScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Verificamos si el vehículo está disponible (1 = Disponible, 0 = No disponible)
     final bool estaDisponible = disponibilidad == 1;
 
     return Scaffold(
       backgroundColor: AppColors.fondo,
       appBar: AppBar(
-        title: Text('$marca $modelo'),
         backgroundColor: AppColors.encabezado,
         foregroundColor: Colors.white,
+        title: Text('$marca $modelo'),
       ),
       body: Center(
         child: Padding(
@@ -118,11 +117,6 @@ class DetalleVehiculoScreen extends StatelessWidget {
                       borderRadius: BorderRadius.circular(12),
                     ),
                   ),
-                  icon: const Icon(Icons.directions_car),
-                  label: const Text(
-                    'Solicitar alquiler',
-                    style: TextStyle(fontSize: 16),
-                  ),
                   onPressed: estaDisponible
                       ? () {
                           Navigator.push(
@@ -133,6 +127,11 @@ class DetalleVehiculoScreen extends StatelessWidget {
                           );
                         }
                       : null,
+                  icon: const Icon(Icons.directions_car),
+                  label: const Text(
+                    'Solicitar alquiler',
+                    style: TextStyle(fontSize: 16),
+                  ),
                 ),
               ],
             ),

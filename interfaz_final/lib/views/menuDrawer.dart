@@ -12,7 +12,7 @@ class _MenuDrawerPerfilState extends State<MenuDrawerPerfil> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: const Color(0xFFFFFFFF),
       appBar: AppBar(
         title: const Text('Perfil'),
         backgroundColor: AppColors.encabezado,
@@ -21,10 +21,13 @@ class _MenuDrawerPerfilState extends State<MenuDrawerPerfil> {
       body: ListView(
         padding: const EdgeInsets.all(24.0),
         children: [
-          const Center(
+          Center(
             child: CircleAvatar(
               radius: 40,
-              backgroundImage: NetworkImage('https://picsum.photos/330/200'),
+              backgroundImage: const NetworkImage(
+                'https://picsum.photos/330/200',
+                scale: 1.0,
+              ),
             ),
           ),
           const SizedBox(height: 16),
@@ -32,7 +35,7 @@ class _MenuDrawerPerfilState extends State<MenuDrawerPerfil> {
             child: Column(
               children: const [
                 Text(
-                  'Nombre de Usuario',
+                  "Nombre de Usuario",
                   style: TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
@@ -41,33 +44,29 @@ class _MenuDrawerPerfilState extends State<MenuDrawerPerfil> {
                 ),
                 SizedBox(height: 4),
                 Text(
-                  'correo@ejemplo.com',
+                  "correo@ejemplo.com",
                   style: TextStyle(fontSize: 16, color: Colors.black54),
                 ),
               ],
             ),
           ),
           const SizedBox(height: 32),
-          const ListTile(
-            leading: Icon(Icons.badge, color: AppColors.encabezado),
-            title: Text('Número de licencia'),
-            subtitle: Text('123456789'),
+          ListTile(
+            leading: const Icon(Icons.badge, color: AppColors.encabezado),
+            title: const Text("Número de licencia"),
+            subtitle: const Text("123456789"),
           ),
           const Divider(),
           ListTile(
             leading: const Icon(Icons.lock, color: AppColors.encabezado),
-            title: const Text('Cambiar contraseña'),
-            onTap: () {
-              // Acción para cambiar contraseña
-            },
+            title: const Text("Cambiar contraseña"),
+            onTap: () {},
           ),
           const Divider(),
           ListTile(
             leading: const Icon(Icons.search_rounded, color: AppColors.boton),
-            title: const Text('Revisar Alquileres'),
-            onTap: () {
-              // Acción para revisar alquileres
-            },
+            title: const Text("Revisar Alquileres"),
+            onTap: () {},
           ),
         ],
       ),
