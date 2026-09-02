@@ -1,8 +1,9 @@
-import 'package:agenda_personal/calculadora.dart';
 import 'package:agenda_personal/calendario.dart';
 import 'package:agenda_personal/contactos_personales.dart';
 import 'package:agenda_personal/menu_opciones.dart';
 import 'package:agenda_personal/mis_tareas.dart';
+import 'package:agenda_personal/registro_usuarios.dart';
+import 'package:agenda_personal/resta.dart';
 import 'package:agenda_personal/suma.dart';
 import 'package:flutter/material.dart';
 
@@ -25,12 +26,14 @@ class _AgendaPersonalState extends State<AgendaPersonal> {
       title: 'Agenda Personal',
       home: MenuOpciones(),
       routes: {
-        '/calculadora':(context) => Calculadora(),
+        '/resta':(context) => Resta(),
         '/calendario':(context) => Calendario(),
         '/contactos_personales':(context) => ContactosPersonales(),
         '/menu_opciones':(context) => MenuOpciones(),
         '/mis_tareas':(context) => MisTareas(),
         '/suma':(context) => Suma(),
+        '/registro_usuarios': (context) => RegistroUsuarios(),
+        '/login_usuarios': (context) => RegistroUsuarios(),
       },
     );
   }

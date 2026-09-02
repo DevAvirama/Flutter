@@ -1,32 +1,28 @@
 import 'package:flutter/material.dart';
 
-class Suma extends StatefulWidget {
-  const Suma({super.key});
+class Resta extends StatefulWidget {
+  const Resta({super.key});
 
   @override
-  State<Suma> createState() => _SumaState();
+  State<Resta> createState() => _RestaState();
 }
 
-class _SumaState extends State<Suma> {
+class _RestaState extends State<Resta> {
   /// Lofica de la operacion ///
   /// Definimos las variables de los numeros///
   final TextEditingController _numero1 = TextEditingController();
   final TextEditingController _numero2 = TextEditingController();
   double resultado = 0.0;
 
-  final _formKey = GlobalKey<FormState>();
-
   /// Definimos fucnion para calcular suma///
 
-  void _calcularSuma() {
-    if (_formKey.currentState?.validate() ?? false) {
-      double num1 = double.tryParse(_numero1.text) ?? 0.0;
-      double num2 = double.tryParse(_numero1.text) ?? 0.0;
+  void _calcularSuma(){
+    double num1 = double.tryParse(_numero1.text) ?? 0.0;
+    double num2 = double.tryParse(_numero1.text) ?? 0.0;
 
-      setState(() {
-        resultado = num1 + num2;
-      });
-    }
+    setState(() {
+      resultado = num1 - num2;
+    });
   }
 
 
@@ -45,14 +41,13 @@ class _SumaState extends State<Suma> {
               height: 16,
             ),
             SizedBox(height: 8),
-            Text('    Suma de numeros'),
+            Text('    Resta de Numeros'),
           ],
         ),
       ),
       body: Padding(
         padding: EdgeInsets.all(16),
         child: Form(
-          key: _formKey,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
@@ -73,16 +68,6 @@ class _SumaState extends State<Suma> {
                       borderRadius: BorderRadius.circular(30),
                     )
                 ),
-                keyboardType: TextInputType.number,
-                validator: (value) {
-                  if( value == null || value.isEmpty){
-                    return 'No se ha ingresado un valor valido';
-                  }
-                  if (double.tryParse(value) == null){
-                    return 'No se ha ingresado un valor';
-                  }
-                  return null;
-                },
               ),
               SizedBox(height: 20),
               TextFormField(
@@ -93,28 +78,18 @@ class _SumaState extends State<Suma> {
                       borderRadius: BorderRadius.circular(30),
                     )
                 ),
-                keyboardType: TextInputType.number,
-                validator: (value){
-                  if (value == null || value.isEmpty){
-                    return 'No se ha ingresado un valor valido';
-                  }
-                  if(double.tryParse(value) == null){
-                    return 'No se ha ingresado un valor';
-                  }
-                  return null;
-                },
               ),
               SizedBox(height: 20),
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.teal,
-                  foregroundColor: Colors.white,
-                  minimumSize: Size(double.infinity, 50)
+                    backgroundColor: Colors.teal,
+                    foregroundColor: Colors.white,
+                    minimumSize: Size(double.infinity, 50)
                 ),
                 onPressed: () {
                   _calcularSuma();
                 },
-                child: Text('Hacer sumatoria',
+                child: Text('Hacer resta',
                   style: TextStyle(
                     color: Colors.white,
                   ),
@@ -122,11 +97,11 @@ class _SumaState extends State<Suma> {
               ),
               SizedBox(height: 10),
               Text(
-                style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.green,
-                ),
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.green,
+                  ),
                   'Resultado: $resultado'
               )
             ],

@@ -1,4 +1,6 @@
-import 'package:agenda_personal/calculadora.dart';
+import 'package:agenda_personal/login_usuario.dart';
+import 'package:agenda_personal/registro_usuarios.dart';
+import 'package:agenda_personal/resta.dart';
 import 'package:agenda_personal/suma.dart';
 import 'package:flutter/material.dart';
 import 'package:agenda_personal/contactos_personales.dart';
@@ -128,14 +130,14 @@ class _MenuOpcionesState extends State<MenuOpciones> {
           SizedBox(height: 8),
           Card(
             child: ListTile(
-              title: Text('Calculadora'),
-              subtitle: Text('Calculadora base'),
-              leading: Icon(Icons.add),
+              title: Text('Resta'),
+              subtitle: Text('Resta de numeros'),
+              leading: Icon(Icons.minimize),
               trailing: Icon(Icons.arrow_circle_right_rounded),
               onTap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => Calculadora()),
+                  MaterialPageRoute(builder: (context) => Resta()),
                 );
               },
             ),
@@ -143,24 +145,30 @@ class _MenuOpcionesState extends State<MenuOpciones> {
           SizedBox(height: 8),
           Card(
             child: ListTile(
-              title: Text('Resgistro'),
-              subtitle: Text('Resgistro base'),
-              leading: Icon(Icons.add),
+              title: Text('Resgistro de Usuarios'),
+              subtitle: Text('Registrate en la aplicacion'),
+              leading: Icon(Icons.person_add_alt_1_rounded),
               trailing: Icon(Icons.arrow_circle_right_rounded),
               onTap: () {
-                print('Registro');
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => RegistroUsuarios()),
+                );
               },
             ),
           ),
           SizedBox(height: 8),
           Card(
             child: ListTile(
-              title: Text('Contrato'),
-              subtitle: Text('Contrato base'),
-              leading: Icon(Icons.add),
+              title: Text('LogIn'),
+              subtitle: Text('Inicia Sesion'),
+              leading: Icon(Icons.person_pin),
               trailing: Icon(Icons.arrow_circle_right_rounded),
               onTap: () {
-                print('Contrato');
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => LoginUsuario()),
+                );
               },
             ),
           ),
